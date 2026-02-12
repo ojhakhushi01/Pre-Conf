@@ -68,7 +68,7 @@ function LiveEvents() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className={styles.icon}>😊</div>
+            <div className={styles.icon}>🎤</div>
             <h3 className={styles.featureTitle}>TOP SPEAKERS</h3>
             <p className={styles.featureText}>
               Anyone can <span className={styles.highlight}>become a host</span> and customize the number of participants.
@@ -77,8 +77,8 @@ function LiveEvents() {
         </div>
         
         <div className={styles.ctas}>
-          <button className={styles.primaryBtn}>Get Started</button>
-          <button className={styles.secondaryBtn}>🔍 Browse</button>
+          <button className={styles.primaryBtn}>Grab your ticket</button>
+          <button className={styles.secondaryBtn}>Become Partner</button>
         </div>
       </div>
     </section>

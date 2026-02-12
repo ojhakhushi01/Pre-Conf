@@ -4,19 +4,19 @@ import styles from './UpcomingEvents.module.css';
 
 const events = [
   {
-    title: 'Honest Conversations in Tech',
+    title: 'GWY NIGHT CAMP DELHI EDITION',
     date: 'THU, 15 MAY 2026',
     speaker: 'Sarah Martinez',
     role: 'Engineering Lead',
   },
   {
-    title: 'Women Building in Public',
+    title: 'GWY NIGHT CAMP PUNE EDITION',
     date: 'FRI, 20 MAY 2026',
     speaker: 'Alex Johnson',
     role: 'Indie Maker',
   },
   {
-    title: 'Culture, Creativity & Capital',
+    title: 'GWY NIGHT CAMP BANGALORE EDITION',
     date: 'SAT, 25 MAY 2026',
     speaker: 'Priya Singh',
     role: 'VC Partner',
@@ -40,10 +40,6 @@ function UpcomingEvents() {
             >
               👁 View All Events
             </button>
-            <div className={styles.nav}>
-              <button className={styles.navBtn}>←</button>
-              <button className={styles.navBtn}>→</button>
-            </div>
           </div>
         </div>
         
@@ -74,13 +70,20 @@ function UpcomingEvents() {
                 </div>
               </div>
               
-              <button className={styles.arrow}>→</button>
             </motion.div>
           ))}
         </div>
         
         <div className={styles.description}>
-          <p>Virtual meetings, and conferences,<br />anyone can share, join or host (virtual events).</p>
+          <p>A community-led, online night meetup where conversations happen naturally and everyone belongs.</p>
+          <a 
+            href="https://forms.gle/EuvvDT5iEcdyAfRM9" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={styles.hostBtn}
+          >
+            Become a host →
+          </a>
         </div>
       </div>
     </section>
