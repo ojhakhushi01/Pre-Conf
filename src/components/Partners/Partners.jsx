@@ -54,18 +54,22 @@ const Partners = () => {
   }, []);
 
   const partners = [
-  
-  { name: "GitHub", logo: "https://cdn.simpleicons.org/github" },
-  { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
-  { name: "Microsoft Azure", logo: "https://cdn.simpleicons.org/microsoftazure" },
-  { name: "Polygon", logo: "https://cdn.simpleicons.org/polygon" },
-  { name: "Replit", logo: "https://cdn.simpleicons.org/replit" },
-  { name: "Tezos", logo: "https://cdn.simpleicons.org/tezos" },
-  { name: "Polkadot", logo: "https://cdn.simpleicons.org/polkadot" },
-  { name: "Arweave", logo: "https://cdn.simpleicons.org/arweave/000000" },
-  { name: "Filecoin", logo: "https://cdn.simpleicons.org/filecoin/000000" },
-  { name: "Devfolio", logo: "https://cdn.simpleicons.org/devfolio/000000" },
-  { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" }
+  { name: "GitHub", logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" },
+  { name: "Microsoft", logo: "https://img.icons8.com/color/48/microsoft.png" },
+  { name: "Google", logo: "https://img.icons8.com/color/48/google-logo.png" },
+  { name: "MongoDB", logo: "https://img.icons8.com/color/48/mongodb.png" },
+  { name: "Polygon", logo: "https://cryptologos.cc/logos/polygon-matic-logo.png" },
+  { name: "Ethereum", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.png" },
+  { name: "Replit", logo: "https://img.icons8.com/color/48/replit.png" },
+  { name: "Meta", logo: "https://img.icons8.com/color/48/meta.png" },
+  { name: "Netflix", logo: "https://img.icons8.com/color/48/netflix.png" },
+  { name: "Spotify", logo: "https://img.icons8.com/color/48/spotify.png" },
+  { name: "AWS", logo: "https://img.icons8.com/color/48/amazon-web-services.png" },
+  { name: "Docker", logo: "https://img.icons8.com/color/48/docker.png" },
+  { name: "Vercel", logo: "https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_light_background.png" },
+  { name: "OpenAI", logo: "https://img.icons8.com/color/48/chatgpt.png" },
+  { name: "Tesla", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tesla.svg" },
+  { name: "Apple", logo: "https://img.icons8.com/color/48/mac-os.png" }
 ];
 
 
@@ -88,7 +92,7 @@ const Partners = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               >
-                Organizations that believe in community-led growth, open conversations, and inclusive ecosystems
+                Organizations that believe in community led growth, open conversations, and inclusive ecosystems
               </motion.p>
             )}
           </AnimatePresence>
