@@ -59,7 +59,7 @@ function PlanAhead() {
             Come Volunteer with us. Help us weave this global story across 150+ cities, alongside partners from 25+ countries.
           </p>
 
-          <button className={styles.ctaBtn}>
+          <button className={styles.ctaBtn} onClick={() => window.open('https://luma.com/he730d4l', '_blank', 'noopener,noreferrer') }>
             Participate
           </button>
         </motion.div>

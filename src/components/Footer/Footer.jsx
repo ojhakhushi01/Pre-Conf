@@ -65,10 +65,10 @@ function Footer() {
 
             <div className={styles.linkColumn}>
               <h4 className={styles.columnTitle}>Get Involved</h4>
-              <a href="https://forms.gle/EuvvDT5iEcdyAfRM9" target="_blank" rel="noopener noreferrer" className={styles.link}>Become a host for the GWY Night Camp (in your city)</a>
-              <a href="https://forms.gle/GMrrwXAg67THNBN58" target="_blank" rel="noopener noreferrer" className={styles.link}>Apply for the Ambassador Program</a>
-              <a href="https://luma.com/40umdp7f" target="_blank" rel="noopener noreferrer" className={styles.link}>Apply for Community Partner(s)</a>
-              <a href="https://luma.com/he730d4l" target="_blank" rel="noopener noreferrer" className={styles.link}>Apply for Pre-Conf Talent Night</a>
+              <a href="https://forms.gle/EuvvDT5iEcdyAfRM9" target="_blank" rel="noopener noreferrer" className={styles.link}>Become a host (in your city)</a>
+              <a href="https://forms.gle/GMrrwXAg67THNBN58" target="_blank" rel="noopener noreferrer" className={styles.link}>Ambassador Program</a>
+              <a href="https://luma.com/40umdp7f" target="_blank" rel="noopener noreferrer" className={styles.link}>Community Partner(s)</a>
+              <a href="https://luma.com/he730d4l" target="_blank" rel="noopener noreferrer" className={styles.link}>Pre-Conf Talent Night</a>
             </div>
           </div>
         </div>
