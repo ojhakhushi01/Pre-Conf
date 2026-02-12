@@ -54,21 +54,17 @@ const Partners = () => {
   }, []);
 
   const partners = [
-  
-  { name: "GitHub", logo: "https://cdn.simpleicons.org/github" },
-  { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" },
-  { name: "Microsoft Azure", logo: "https://cdn.simpleicons.org/microsoftazure" },
-  { name: "Polygon", logo: "https://cdn.simpleicons.org/polygon" },
-  { name: "Replit", logo: "https://cdn.simpleicons.org/replit" },
-  { name: "Tezos", logo: "https://cdn.simpleicons.org/tezos" },
-  { name: "Polkadot", logo: "https://cdn.simpleicons.org/polkadot" },
-  { name: "Arweave", logo: "https://cdn.simpleicons.org/arweave/000000" },
-  { name: "Filecoin", logo: "https://cdn.simpleicons.org/filecoin/000000" },
-  { name: "Devfolio", logo: "https://cdn.simpleicons.org/devfolio/000000" },
-  { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb" }
+  { name: "GitHub", logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" },
+  { name: "MongoDB", logo: "https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png" },
+  { name: "Microsoft Azure", logo: "https://swimburger.net/media/ppnn3pcl/azure.png" },
+  { name: "Polygon", logo: "https://cryptologos.cc/logos/polygon-matic-logo.png" },
+  { name: "Replit", logo: "https://replit.com/public/images/logo-small.png" },
+  { name: "Tezos", logo: "https://cryptologos.cc/logos/tezos-xtz-logo.png" },
+  { name: "Polkadot", logo: "https://cryptologos.cc/logos/polkadot-new-dot-logo.png" },
+  { name: "Arweave", logo: "https://cryptologos.cc/logos/arweave-ar-logo.png" },
+  { name: "Filecoin", logo: "https://cryptologos.cc/logos/filecoin-fil-logo.png" },
+  { name: "Devfolio", logo: "/devfolio-logo.jpg" }
 ];
-
-
 
   const loopedPartners = [...partners, ...partners];
 
@@ -88,7 +84,7 @@ const Partners = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               >
-                Organizations that believe in community-led growth, open conversations, and inclusive ecosystems
+                Organizations that believe in community led growth, open conversations, and inclusive ecosystems
               </motion.p>
             )}
           </AnimatePresence>
@@ -107,7 +103,9 @@ const Partners = () => {
                 ) : (
                   <span className={styles.partnerIcon}>{partner.icon}</span>
                 )}
-                <span className={styles.partnerName}>{partner.name}</span>
+                {partner.name !== "MongoDB" && (
+                  <span className={styles.partnerName}>{partner.name}</span>
+                )}
               </div>
             ))}
           </motion.div>
