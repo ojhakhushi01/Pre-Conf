@@ -38,16 +38,25 @@
 }
 
 .card {
-    background: #fff;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(240, 245, 250, 0.9) 100%);
+    backdrop-filter: blur(10px);
     padding: var(--space-8);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15),
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     transition: all var(--transition-base);
-    border: 2px solid transparent;
 }
 
 .card:hover {
-    border-color: var(--color-text-primary);
+    transform: translateY(-8px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2),
+        0 15px 35px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 0.8);
 }
 
 .cardNumber {

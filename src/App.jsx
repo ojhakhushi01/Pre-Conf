@@ -10,6 +10,7 @@ import BecomeASpeaker from './components/BecomeASpeaker/BecomeASpeaker';
 import PlanAhead from './components/PlanAhead/PlanAhead';
 import Engagement from './components/Engagement/Engagement';
 import CTASection from './components/CTASection/CTASection';
+import Partners from './components/Partners/Partners';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <main>
         <HeroSection />
         <FeatureCards />
+         <Partners />
         <Testimonials />
         <LiveEvents />
         <UpcomingEvents />
@@ -27,6 +29,7 @@ function App() {
         <PlanAhead />
         <Engagement />
         <CTASection />
+       
       </main>
       <Footer />
     </div>

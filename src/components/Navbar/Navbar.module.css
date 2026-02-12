@@ -24,11 +24,17 @@
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
 }
+
+.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
 
 .navLinks {
     display: flex;

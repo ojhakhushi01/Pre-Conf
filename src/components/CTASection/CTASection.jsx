@@ -1,110 +1,60 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import styles from './CTASection.module.css';
 
 function CTASection() {
   return (
-    <section className={styles.cta}>
+    <section className={styles.ourReachSection}>
       <div className={styles.container}>
-        <motion.div
-          className={styles.contentWrapper}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Section Header */}
-          <div className={styles.header}>
-            <h2 className={styles.heading}>Our Reach</h2>
-            <p className={styles.subtext}>
-              We are not limited in India, we fly our wings to provide quality over the world.
-            </p>
+        <h2 className={styles.reachTitle}>Our Reach</h2>
+        
+        <div className={styles.reachContent}>
+          <div className={styles.worldMapContainer}>
+            <div className={styles.mapImageWrapper}>
+              <img 
+                src="https://www.notion.so/image/attachment%3Aca1f0355-6603-4b0b-b5b3-0cb00715372b%3AGWY_CONF_INDIA.png?table=block&id=2ded8cf9-6e75-8008-8cac-ca870b1f92cc&spaceId=ed3c5042-1ff5-40df-936f-6a222ed4453a&width=2000&userId=&cache=v2"
+                alt="Our Reach - Global Presence Map"
+                className={styles.reachMapImage}
+              />
+              <div className={styles.mapOverlay}></div>
+              <div className={styles.mapShine}></div>
+            </div>
           </div>
-
-          {/* Stats Grid */}
-          <div className={styles.statsGrid}>
-            {/* Total Reach */}
-            <motion.div 
-              className={styles.statItem}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className={styles.iconWrapper}>
-                <span className={styles.icon}>✦</span>
-              </div>
+          
+          {/* Statistics */}
+          <div className={styles.reachStats}>
+            <div className={`${styles.reachStat} ${styles.statLeftTop}`}>
+              <span className={`${styles.statIcon} ${styles.statIconGreen}`}>✦</span>
               <div className={styles.statContent}>
-                <div className={styles.statLabel}>Total Reach</div>
-                <div className={styles.statValue}>2M+</div>
+                <span className={styles.statLabel}>Total Reach</span>
+                <span className={styles.statValue}>2M+</span>
               </div>
-            </motion.div>
-
-            {/* Institution Partners */}
-            <motion.div 
-              className={styles.statItem}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className={styles.iconWrapper}>
-                <span className={styles.icon}>★</span>
-              </div>
+            </div>
+            
+            <div className={`${styles.reachStat} ${styles.statLeftBottom}`}>
+              <span className={`${styles.statIcon} ${styles.statIconYellow}`}>✦</span>
               <div className={styles.statContent}>
-                <div className={styles.statLabel}>Institutions Partners</div>
-                <div className={styles.statValue}>280+</div>
-                <div className={styles.statSub}>global</div>
+                <span className={styles.statLabel}>Community Size</span>
+                <span className={styles.statValue}>40,000+</span>
               </div>
-            </motion.div>
-
-            {/* Community Size */}
-            <motion.div 
-              className={styles.statItem}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <div className={styles.iconWrapper}>
-                <span className={styles.icon}>✦</span>
-              </div>
+            </div>
+            
+            <div className={`${styles.reachStat} ${styles.statRightTop}`}>
+              <span className={`${styles.statIcon} ${styles.statIconPink}`}>✦</span>
               <div className={styles.statContent}>
-                <div className={styles.statLabel}>Community Size</div>
-                <div className={styles.statValue}>40,000+</div>
+                <span className={styles.statLabel}>Institutions Partners</span>
+                <span className={styles.statValue}>280+ global</span>
               </div>
-            </motion.div>
-
-            {/* Operating In */}
-            <motion.div 
-              className={styles.statItem}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <div className={styles.iconWrapper}>
-                <span className={styles.icon}>★</span>
-              </div>
+            </div>
+            
+            <div className={`${styles.reachStat} ${styles.statRightBottom}`}>
+              <span className={`${styles.statIcon} ${styles.statIconPurple}`}>✦</span>
               <div className={styles.statContent}>
-                <div className={styles.statLabel}>Operating in</div>
-                <div className={styles.statValue}>15+</div>
-                <div className={styles.statSub}>countries and 20+ languages</div>
+                <span className={styles.statLabel}>Operating in</span>
+                <span className={styles.statValue}>15+ countries and 20+ languages</span>
               </div>
-            </motion.div>
+            </div>
           </div>
-
-          {/* CTA Button */}
-          <motion.button 
-            className={styles.ctaButton}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            Join the Community
-          </motion.button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

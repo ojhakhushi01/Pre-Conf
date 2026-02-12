@@ -12,11 +12,15 @@ function LiveEvents() {
               <span className={styles.liveDot}></span>
               LIVE
             </div>
-            <img 
-              src="/Gemini_Generated_Image_gh6drxgh6drxgh6d.png" 
-              alt="Live event interface"
+            <video 
+              src="/Pre Conf .mp4" 
+              autoPlay
+              loop
+              muted
               className={styles.videoImage}
-            />
+            >
+              Your browser does not support the video tag.
+            </video>
             <div className={styles.videoControls}>
               <button className={styles.controlBtn}>⏮</button>
               <button className={styles.controlBtn}>⏯</button>

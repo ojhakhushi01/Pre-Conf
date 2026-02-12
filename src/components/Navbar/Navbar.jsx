@@ -16,7 +16,9 @@ function Navbar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <div className={styles.logo}>GirlsWhoYap</div>
+        <div className={styles.logo}>
+          <img src="/logo.png" alt="GirlsWhoYap" />
+        </div>
         
         <div className={styles.navLinks}>
           <a href="#about">About</a>

@@ -47,15 +47,15 @@ function HeroSection() {
       <div className={styles.container}>
         {/* Title Section */}
         <div className={styles.titleSection}>
-          <motion.h1 
-            className={styles.mainTitle}
+          <motion.div 
+            className={styles.logoContainer}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className={styles.titleBlack}>GIRLSWHOYAP</span>
-            <span className={styles.titleColored}>CONFERENCE</span>
-          </motion.h1>
+            <img src="/logo.png" alt="Girls Who Yap" className={styles.mainLogo} />
+            <span className={styles.preConferenceTitle}>pre conference</span>
+          </motion.div>
           
           <motion.div 
             className={styles.descriptionBox}
@@ -64,8 +64,8 @@ function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className={styles.smallDescription}>
-              Virtual meetings, and conferences,<br />
-              anyone can share, join or host (virtual events).
+              Open to all genders and professionals worldwide,<br />
+              a global kickoff to the Girls Who Yap Conference.
             </p>
           </motion.div>
         </div>
@@ -106,20 +106,10 @@ function HeroSection() {
             </div>
           </motion.div>
 
-          {/* NEW Badge */}
-          <motion.div 
-            className={styles.newBadge}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            NEW!!!
-          </motion.div>
-
           {/* Bottom Info */}
           <div className={styles.bottomInfo}>
-            <span className={styles.reminderBtn}>💭 Remind me</span>
-            <span className={styles.participants}>👥 33/128 participants</span>
+            <span className={styles.reminderBtn}>28th Feb, 2026</span>
+            <span className={styles.participants}>2000+ audience</span>
           </div>
         </div>
 
@@ -130,22 +120,40 @@ function HeroSection() {
   );
 }
 
-// Animated CTA Section Component
+// Countdown Timer Section Component
 const AnimatedCTASection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
-  const [count1, setIsAnimating1] = useCounter(3153, 2000);
-  const [count2, setIsAnimating2] = useCounter(847, 2200);
-  const [count3, setIsAnimating3] = useCounter(2456, 2400);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
 
   useEffect(() => {
-    if (isInView) {
-      setIsAnimating1(true);
-      setIsAnimating2(true);
-      setIsAnimating3(true);
-    }
-  }, [isInView, setIsAnimating1, setIsAnimating2, setIsAnimating3]);
+    const targetDate = new Date('2026-02-28T00:00:00').getTime();
+    
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+        });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <motion.div 
@@ -156,23 +164,26 @@ const AnimatedCTASection = () => {
       transition={{ duration: 0.6, delay: 0.8 }}
     >
       <p className={styles.description}>
-        GirlsWhoYap Conference is an Offline / IRL creator-first gathering for women builders, 
-        thinkers, creators, and leaders across tech, web3, AI, design, product, media, and culture.
-        This is not about passive listening — it's about active participation.
+        GWY Pre-Conference is a global virtual gathering designed to kick off the community experience.
+        It's open to everyone, builders, creators, students, professionals, and curious minds, everywhere.
       </p>
 
-      <div className={styles.numbersGrid}>
-        <div className={styles.numberItem}>
-          <div className={styles.number}>{count1.toLocaleString()}+</div>
-          <div className={styles.numberLabel}>Active Members</div>
+      <div className={styles.countdownGrid}>
+        <div className={styles.countdownItem}>
+          <div className={styles.countdownNumber}>{String(timeLeft.days).padStart(2, '0')}</div>
+          <div className={styles.countdownLabel}>Days</div>
         </div>
-        <div className={styles.numberItem}>
-          <div className={styles.number}>{count2.toLocaleString()}+</div>
-          <div className={styles.numberLabel}>Events Hosted</div>
+        <div className={styles.countdownItem}>
+          <div className={styles.countdownNumber}>{String(timeLeft.hours).padStart(2, '0')}</div>
+          <div className={styles.countdownLabel}>Hours</div>
         </div>
-        <div className={styles.numberItem}>
-          <div className={styles.number}>{count3.toLocaleString()}+</div>
-          <div className={styles.numberLabel}>Community Connections</div>
+        <div className={styles.countdownItem}>
+          <div className={styles.countdownNumber}>{String(timeLeft.minutes).padStart(2, '0')}</div>
+          <div className={styles.countdownLabel}>Minutes</div>
+        </div>
+        <div className={styles.countdownItem}>
+          <div className={styles.countdownNumber}>{String(timeLeft.seconds).padStart(2, '0')}</div>
+          <div className={styles.countdownLabel}>Seconds</div>
         </div>
       </div>
 

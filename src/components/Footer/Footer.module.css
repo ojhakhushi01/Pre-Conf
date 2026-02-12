@@ -1,58 +1,74 @@
 .footer {
-    background: var(--color-bg-primary);
-    border-top: 2px solid var(--color-text-primary);
+    background: #ffffff;
     padding: var(--space-16) var(--space-6) var(--space-8);
+    border-top: 1px solid #e5e7eb;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .topSection {
     display: grid;
-    grid-template-columns: 1.5fr 2fr auto;
-    gap: var(--space-12);
-    margin-bottom: var(--space-12);
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-16);
     padding-bottom: var(--space-12);
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .brand {
-    padding-right: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
 }
 
 .logo {
-    font-size: var(--text-3xl);
-    font-weight: 700;
-    margin-bottom: var(--space-4);
-    color: var(--color-text-primary);
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
 }
 
-.mission {
+.description {
     font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-6);
+    color: #6b7280;
     line-height: 1.6;
+    max-width: 400px;
 }
 
-.newEventBtn {
-    background: transparent;
-    border: 2px solid var(--color-text-primary);
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-full);
-    font-weight: 600;
-    transition: all var(--transition-fast);
+.socialIcons {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
 }
 
-.newEventBtn:hover {
-    background: var(--color-text-primary);
-    color: #fff;
+.socialIcon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    border-radius: 8px;
+    color: #374151;
+    transition: all 0.2s ease;
 }
 
-.links {
+.socialIcon:hover {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.socialIcon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.linkColumns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-8);
 }
 
@@ -63,51 +79,61 @@
 }
 
 .columnTitle {
-    font-size: var(--text-lg);
-    font-weight: 700;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: #111827;
     margin-bottom: var(--space-2);
-    color: var(--color-text-primary);
 }
 
 .link {
     font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    transition: color var(--transition-fast);
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .link:hover {
-    color: var(--color-text-primary);
+    color: #111827;
 }
 
-.social {
+.bottomSection {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    align-items: flex-start;
-}
-
-.socialIcon {
-    font-size: var(--text-xl);
-    color: var(--color-text-primary);
-    transition: all var(--transition-fast);
-    width: 40px;
-    height: 40px;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    border: 2px solid transparent;
-    border-radius: 8px;
+    padding-top: var(--space-8);
 }
 
-.socialIcon:hover {
-    border-color: var(--color-text-primary);
-    transform: translateY(-2px);
-}
-
-.bottom {
-    text-align: center;
-    color: var(--color-text-muted);
+.copyright {
     font-size: var(--text-sm);
+    color: #6b7280;
+}
+
+.legalLinks {
+    display: flex;
+    gap: var(--space-6);
+}
+
+.legalLink {
+    font-size: var(--text-sm);
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+    color: #111827;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .topSection {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .linkColumns {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -116,19 +142,22 @@
     }
 
     .topSection {
-        grid-template-columns: 1fr;
         gap: var(--space-8);
     }
 
-    .brand {
-        padding-right: 0;
-    }
-
-    .links {
+    .linkColumns {
         grid-template-columns: 1fr;
+        gap: var(--space-6);
     }
 
-    .social {
-        flex-direction: row;
+    .bottomSection {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: flex-start;
+    }
+
+    .legalLinks {
+        flex-direction: column;
+        gap: var(--space-3);
     }
 }
