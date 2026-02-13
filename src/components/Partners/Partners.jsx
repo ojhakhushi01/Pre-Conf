@@ -54,17 +54,19 @@ const Partners = () => {
   }, []);
 
   const partners = [
-  { name: "GitHub", logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" },
-  { name: "MongoDB", logo: "https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png" },
-  { name: "Microsoft Azure", logo: "https://swimburger.net/media/ppnn3pcl/azure.png" },
-  { name: "Polygon", logo: "https://cryptologos.cc/logos/polygon-matic-logo.png" },
-  { name: "Replit", logo: "https://replit.com/public/images/logo-small.png" },
-  { name: "Tezos", logo: "https://cryptologos.cc/logos/tezos-xtz-logo.png" },
-  { name: "Polkadot", logo: "https://cryptologos.cc/logos/polkadot-new-dot-logo.png" },
-  { name: "Arweave", logo: "https://cryptologos.cc/logos/arweave-ar-logo.png" },
-  { name: "Filecoin", logo: "https://cryptologos.cc/logos/filecoin-fil-logo.png" },
-  { name: "Devfolio", logo: "/devfolio-logo.jpg" }
-];
+    { name: "GitHub", logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" },
+    { name: "MongoDB", logo: "https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png" },
+    { name: "Polygon", logo: "https://cryptologos.cc/logos/polygon-matic-logo.png" },
+    { logo: "https://replit.com/public/images/logo-small.png" },
+    { name: "Soonami.io", logo: "/public/soonami.jpg" },
+    { name: "Mentro", logo: "/public/mentro.jpg" },
+    { name: "Socrates", logo: "/socrates.jpg" },
+    { name: "Filecoin", logo: "https://cryptologos.cc/logos/filecoin-fil-logo.png" },
+    { name: "Devfolio", logo: "/public/devfolio-logo.jpg" },
+    { name: "CoreDAO.org", logo: "https://cryptologos.cc/logos/core-dao-core-logo.png" },
+    { logo: "/public/reskill.jpg" },
+    { name: "Unhosted AI", logo: "/public/unhosted.jpg" }
+  ];
 
   const loopedPartners = [...partners, ...partners];
 

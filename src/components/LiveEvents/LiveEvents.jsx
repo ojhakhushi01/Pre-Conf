@@ -49,8 +49,7 @@ function LiveEvents() {
           
           <div className={styles.chatPreview}>
             <div className={styles.chatHeader}>
-              <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" fill="#4285F4"/></svg> Live Chat</span>
-              <span className={styles.attendees}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H17c-.8 0-1.54.37-2.01.99l-2.54 3.38c-.74.99-.74 2.31 0 3.3l1.04 1.38V18c0 .55.45 1 1 1s1-.45 1-1v-1.5c0-.28-.11-.53-.29-.71L14 15.5l1.26-1.68c.11-.15.29-.24.49-.24.4 0 .75.32.75.75V22h2.5z" fill="#666"/></svg> Attendees (128)</span>
+              <span>Live Chat</span>
             </div>
             <div className={styles.chatMessages}>
               <div className={styles.chatMessage}>
