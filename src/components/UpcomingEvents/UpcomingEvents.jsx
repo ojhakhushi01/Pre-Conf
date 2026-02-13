@@ -4,22 +4,22 @@ import styles from './UpcomingEvents.module.css';
 
 const events = [
   {
-    title: 'GWY NIGHT CAMP DELHI EDITION',
+    title: 'GWY NIGHT CAMP\nDELHI EDITION',
     date: 'THU, 15 MAY 2026',
     speaker: 'Sarah Martinez',
-    role: 'Engineering Lead',
+    role: 'HOST',
   },
   {
-    title: 'GWY NIGHT CAMP PUNE EDITION',
+    title: 'GWY NIGHT CAMP\nPUNE EDITION',
     date: 'FRI, 20 MAY 2026',
     speaker: 'Alex Johnson',
-    role: 'Indie Maker',
+    role: 'HOST',
   },
   {
-    title: 'GWY NIGHT CAMP BANGALORE EDITION',
+    title: 'GWY NIGHT CAMP\nBANGALORE EDITION',
     date: 'SAT, 25 MAY 2026',
     speaker: 'Priya Singh',
-    role: 'VC Partner',
+    role: 'HOST',
   },
 ];
 
@@ -34,14 +34,14 @@ function UpcomingEvents() {
           </h2>
           
           <div className={styles.headerActions}>
-            <button 
+            {/* <button 
               className={styles.viewAllBtn}
               onClick={() => window.location.href = '/events.html'}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px'}}>
                 <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="black"/>
               </svg> View All Events
-            </button>
+            </button> */}
           </div>
         </div>
         
@@ -56,7 +56,15 @@ function UpcomingEvents() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <h3 className={styles.eventTitle}>{event.title}</h3>
+              {/* UPDATED: Split logic to force line breaks */}
+              <h3 className={styles.eventTitle}>
+                {event.title.split('\n').map((line, i) => (
+                  <span key={i} style={{ display: 'block' }}>
+                    {line}
+                  </span>
+                ))}
+              </h3>
+
               <p className={styles.eventDate}>{event.date}</p>
               
               <div className={styles.speakerInfo}>
@@ -84,7 +92,7 @@ function UpcomingEvents() {
             rel="noopener noreferrer"
             className={styles.hostBtn}
           >
-            Become a host →
+            Become a host
           </a>
         </div>
       </div>

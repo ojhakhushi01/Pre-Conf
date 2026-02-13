@@ -121,7 +121,7 @@ function HeroSection() {
             
             {/* Updated container to include logo before text */}
             <div className={styles.poweredByContainer}>
-              <img src="/logo.png" alt="DoraDao" className={styles.partnerLogo} style={{ borderRadius: '50%' }} /> 
+              <img src="/dd.png" alt="DoraDao" className={styles.partnerLogo} style={{ borderRadius: '50%' }} /> 
               <span>Powered by DoraDao</span>
             </div>
           </div>

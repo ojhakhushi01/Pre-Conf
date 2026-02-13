@@ -17,7 +17,7 @@ function Testimonials() {
     <section className={styles.testimonials}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Community Voices</h2>
+          <h2 className={styles.title}>Speaker Voices</h2>
         </div>
         
         <div className={styles.scrollContainer}>
