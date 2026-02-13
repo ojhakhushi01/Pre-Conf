@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, Download, Loader2, Linkedin, Instagram, Twitter, Check, Copy } from 'lucide-react';
+import { Upload, Download, Loader2, Linkedin, Instagram, Twitter, Check } from 'lucide-react';
 import { supabase } from '../../supabaseClient';
 import imageCompression from 'browser-image-compression';
 import './TicketSection.css'; 
-
 
 const TICKET_CONFIG = {
   avatar: { x: 64.6, y: 50.6, size: 101.1 },
@@ -133,6 +132,7 @@ const TicketSection = () => {
     setError('');
 
     try {
+      // 1. Check if ticket exists
       const { data: existing } = await supabase
         .from('tickets')
         .select('id')
@@ -145,6 +145,7 @@ const TicketSection = () => {
         return;
       }
 
+      // 2. Handle Image Upload
       let avatarUrl = '';
       if (formData.image) {
         let fileToUpload = formData.image;
@@ -176,6 +177,7 @@ const TicketSection = () => {
         avatarUrl = publicUrlData.publicUrl;
       }
 
+      // 3. Generate Seat Details
       const row = Math.floor(Math.random() * 50) + 1;
       const seat = Math.floor(Math.random() * 100) + 1;
 
@@ -191,15 +193,19 @@ const TicketSection = () => {
         seat_number: seat.toString().padStart(2, '0')
       };
 
+      // 4. Insert Ticket (FIXED: Removed .single())
       const { data, error: insertError } = await supabase
         .from('tickets')
         .insert([newTicket])
-        .select()
-        .single();
+        .select();
 
       if (insertError) throw insertError;
 
-      setTicketData(data);
+      // 5. Handle Response (FIXED: Handle array or fallback)
+      // If RLS hides the return data, we use 'newTicket' so the UI still works
+      const finalTicketData = (data && data.length > 0) ? data[0] : newTicket;
+
+      setTicketData(finalTicketData);
       setView('ticket');
 
     } catch (err) {
@@ -340,7 +346,6 @@ const TicketSection = () => {
         {/* LOGIN VIEW */}
         {view === 'login' && (
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="ticket-card">
-            {/* <img src="/logo.png" alt="Girls Who Yap" className="site-logo" /> */}
             <h2>Retrieve Ticket</h2>
             <div className="form-group">
               <label>Email</label>
@@ -365,7 +370,6 @@ const TicketSection = () => {
         {/* FORM VIEW (SPLIT) */}
         {view === 'form' && (
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="ticket-card wide-form">
-            {/* <img src="/logo.png" alt="Girls Who Yap" className="site-logo" /> */}
             <h2>Secure Your Free Pass</h2> 
             <h6> (No registration fee. Limited curated seats.) </h6>
             <form onSubmit={handleSubmit}>
@@ -454,15 +458,10 @@ const TicketSection = () => {
         {view === 'ticket' && ticketData && (
           <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="ticket-display-wrapper">
             
-            {/* <img src="/logo.png" alt="Girls Who Yap" className="site-logo" /> */}
-
-            {/* NEW HEADER */}
             <h1 className="ticket-main-heading">You’re Officially In !</h1>
             <p className="ticket-sub-heading">
               Welcome to the <span className="highlight-text">"GWY Pre-Conference Global Experience"</span>
             </p>
-
-            {/* <h2 style={{ marginBottom: '0.5rem' }}>Your Ticket is Ready!</h2> */}
             
             <div className="ticket-visual" style={{
               '--avatar-x': `${TICKET_CONFIG.avatar.x}%`,
