@@ -64,7 +64,7 @@ const Partners = () => {
     { name: "Filecoin", logo: "https://cryptologos.cc/logos/filecoin-fil-logo.png" },
     { name: "Devfolio", logo: "/devfolio-logo.png" },
     { name: "CoreDAO.org", logo: "https://cryptologos.cc/logos/core-dao-core-logo.png" },
-    { logo: "/reskill.png" },
+    // { logo: "/reskill.png" },
     { name: "Unhosted AI", logo: "/unhosted.png" }
   ];
 

@@ -140,7 +140,8 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    object-fit: cover; /* Replaced background gradient with object-fit for image */
+    object-fit: cover;
+    /* Replaced background gradient with object-fit for image */
     flex-shrink: 0;
 }
 
@@ -203,7 +204,8 @@
     display: flex;
     gap: var(--space-4);
     z-index: 10;
-    align-items: center; /* Align items vertically */
+    align-items: center;
+    /* Align items vertically */
 }
 
 .reminderBtn {
@@ -219,7 +221,8 @@
 .poweredByContainer {
     background: rgba(255, 255, 255, 0.95);
     padding: var(--space-2) var(--space-4);
-    padding-left: var(--space-2); /* Adjusted padding for logo */
+    padding-left: var(--space-2);
+    /* Adjusted padding for logo */
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 600;
@@ -231,7 +234,8 @@
 }
 
 .partnerLogo {
-    width: 20px; /* Sized for the powered-by pill */
+    width: 20px;
+    /* Sized for the powered-by pill */
     height: 20px;
     object-fit: contain;
     display: block;
@@ -356,7 +360,6 @@
 .getTicketsBtn:hover::before {
     left: 100%;
 }
-
 
 @media (max-width: 768px) {
     .hero {
